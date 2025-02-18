@@ -12,9 +12,10 @@ const Chatbot: React.FC = () => {
     setLoading(true);
 
     try {
-      const result = await axios.post("http://localhost:5000/api/chatbot", {
+      const result = await axios.post("http://localhost:5000/chat", {
         text,
       });
+      console.log("result:", result);
       setResponse(result.data.response);
       setLoading(false);
     } catch (error) {
